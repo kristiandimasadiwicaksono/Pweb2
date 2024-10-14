@@ -1,6 +1,6 @@
 <?php
 // Definisi sebuah class
-class Pengguna {
+abstract class Pengguna {
     // Atribut
     private $nama;
     
@@ -9,15 +9,10 @@ class Pengguna {
         $this->nama = $nama;
     }
 
-    // Method untuk menampilkan nama pengguna
-    public function getNama(){
-        echo "Nama : $this->nama<br>";
-    }
-    // Method untuk menampilkan akses fitur pengguna
-    public function aksesFitur(){
-        echo "Pengguna dapat mengakses fitur untuk pengguna";
-    }
+    // abstract method
+    abstract public function aksesFitur();
 }
+
 
 // Definisi sebuah class
 class Mahasiswa extends pengguna {
@@ -94,10 +89,6 @@ $Dsn = new Dosen("Adudu", "Matdis");
 $Mhs = new Mahasiswa("Adudu","233333333","Mesin");
 // Memanggil method akses fitur pada class Mahasiswa
 $Mhs->aksesFitur();
-// Memanggil method tampilkan data pada class Mahasiswa
-$Mhs->tampilkanData();
 // Memanggil method akses fitur pada class Dosen
 $Dsn->aksesFitur();
-// Memanggil method Mata Kuliah pada class Dosen
-$Dsn->getMataKuliah();
 ?>

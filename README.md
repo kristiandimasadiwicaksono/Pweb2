@@ -119,7 +119,7 @@ $Dsn->tampilkanDosen();
 ### Hasil
 Sehingga adapun hasil yang di dapat dalam Jobsheet 1 adalah sebagai berikut :
 
-<img src= "/image/Hasil.png">
+<img src= "image/Hasil.png">
 
 <hr>
 
@@ -161,7 +161,7 @@ $Mhs->tampilkanData();
 ```
 Hasil :
 
-<img src = '/image/Jobsheet21.png'>
+<img src = 'image/Jobsheet21.png'>
 
 #### 2. Encapsulation
 <p align = "justify">Langkah ke-2 yaitu encapsulation dimana menyatukan atribut dan method yang biasa disebut dengan object. Encapsulation digunakan untuk membatasi akses terhadap atribut dan method, sehingga data yang diubah hanya data yang dipanggil melalui sebuah method tersebut. pada langkah ke-2 ini diterapkan dengan menggunakan method setter dan getter, contohnya setNama dan getNama dimana set untuk memberikan nilai kepada sebuah atribut dan get untuk mendapatkan data tersebut.</p>
@@ -230,7 +230,7 @@ $Mhs->getJurusan();
 
 Hasil : 
 
-<img src = '/image/Jobsheet22.png'>
+<img src = 'image/Jobsheet22.png'>
 
 #### 3. Inheritance
 
@@ -283,7 +283,15 @@ Hasil :
 
 #### 4. Polymorphism
 
-<p align="justify">Polymorphism merupakan </p>
+<p align="justify">Polymorphism dapat menggunakan method yang sama dengan superclass maupun subclass lainnya. Walaupun dapat menggunakan method yang sama, tetapi implementasinya harus berbeda. contohnya pada program dibawah ini yaitu pada class pengguna dengan potongan program 
+<br> 
+
+>"public function aksesFitur
+(){<br>
+        echo "Pengguna dapat mengakses fitur untuk pengguna";<br>
+    }" </p>
+
+dimana implementasi dari akses fitur tersebut berbeda dengan class yang lainnya.
 
 ```php
 <?php
@@ -393,3 +401,106 @@ $Dsn->getMataKuliah();
 Hasil : 
 
 <img src = "image/Jobsheet24.png">
+
+#### 5. Abstraction
+
+<p align="Justify">Abstraction berfungsi untuk menyembunyikan detail implementasi pada sebuah program. pada program dibawah ini abstraction ditulis sebagai "abstract public function aksesFitur();" yang berfungsi agar kelas turunannya wajib mengimplementasikan aksesFitur tersebut. </p>
+
+```php
+<?php
+// Definisi sebuah class
+abstract class Pengguna {
+    // Atribut
+    private $nama;
+    
+    // Constructor
+    public function __construct($nama){
+        $this->nama = $nama;
+    }
+
+    // abstract method
+    abstract public function aksesFitur();
+}
+
+
+// Definisi sebuah class
+class Mahasiswa extends pengguna {
+    // Atribut
+    private $nim;
+    private $jurusan;
+
+    // Constructor
+    public function __construct($nama, $nim, $jurusan){
+        parent::__construct($nama);
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+    // Method untuk menampilkan data keseluruhan mahasiswa
+    public function tampilkanData(){
+        parent::getNama();
+        echo "NIM : $this->nim <br> Jurusan : $this->jurusan <br>";
+    }
+    // Method untuk meletakkan value nama 
+    public function setNama($nama){
+        $this->nama = $nama;
+    }
+    // Method untuk meletakkan value NIM
+    public function setNim($nim){
+        $this->nim = $nim;
+    }
+    // Method untuk meletakkan value Jurusan
+    public function setJurusan($jurusan){
+        $this->jurusan = $jurusan;
+    }
+    // Method untuk menampilkan data Nama mahasiswa
+    public function getNama(){
+        echo "Nama : $this->nama<br>";
+    }
+    // Method untuk menampilkan data NIM mahasiswa
+    public function getNim(){
+        echo "NIM : $this->nim<br>";
+    }
+    // Method untuk menampilkan data Jurusan mahasiswa
+    public function getJurusan(){
+        echo "Jurusan : $this->jurusan<br>";
+    }
+    // Method untuk menampilkan akses fitur pada mahasiswa
+    public function aksesFitur(){
+        echo "Mahasiswa dapat mengakses fitur untuk mahasiswa<br>";
+    }
+}
+
+
+// Definisi sebuah class yang merupakan warisan dari pengguna
+class Dosen extends Pengguna{
+    private $mataKuliah;
+
+    // Constructor
+    public function __construct($nama, $mataKuliah){
+        parent::__construct($nama);
+        $this->mataKuliah = $mataKuliah;
+    }
+
+    // method untuk menampilkan mata kuliah
+    public function getMataKuliah(){
+        echo "Matkul : $this->mataKuliah<br>";
+    }
+
+    // Method untuk menampilkan akses fitur pada mahasiswa
+    public function aksesFitur(){
+        echo "Dosen dapat mengakses fitur untuk dosen<br>";
+    }
+}
+
+// Instansiasi objek
+$Dsn = new Dosen("Adudu", "Matdis");
+$Mhs = new Mahasiswa("Adudu","233333333","Mesin");
+// Memanggil method akses fitur pada class Mahasiswa
+$Mhs->aksesFitur();
+// Memanggil method akses fitur pada class Dosen
+$Dsn->aksesFitur();
+?>
+```
+
+<img src = "image/Jobsheet25.png">
