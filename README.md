@@ -4,7 +4,7 @@
 
 <hr></hr>
 
-### <p>Instruksi Kerja</p>
+### <p align= center>Instruksi Kerja</p>
 Penjelasan mengenai Instruksi Kerja pada pertemuan 1-2
 
 <b><p>1. Membuat class </p></b>
@@ -69,7 +69,7 @@ $mahasiswa1->setNim("230302011");
 $mahasiswa1->tampilkanData();
 ```
 
-### <p> Tugas 1</p>
+### <p align= center> Tugas 1</p>
 Penjelasan mengenai tugas pada pertemuan 1-2
 
 
