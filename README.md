@@ -286,10 +286,10 @@ Hasil :
 <p align="justify">Polymorphism dapat menggunakan method yang sama dengan superclass maupun subclass lainnya. Walaupun dapat menggunakan method yang sama, tetapi implementasinya harus berbeda. contohnya pada program dibawah ini yaitu pada class pengguna dengan potongan program 
 <br> 
 
->"public function aksesFitur
+>public function aksesFitur
 (){<br>
         echo "Pengguna dapat mengakses fitur untuk pengguna";<br>
-    }" </p>
+    } </p>
 
 dimana implementasi dari akses fitur tersebut berbeda dengan class yang lainnya.
 
