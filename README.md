@@ -390,3 +390,6 @@ $Dsn->aksesFitur();
 $Dsn->getMataKuliah();
 ?>
 ```
+Hasil : 
+
+<img src = "image/Jobsheet24.png">
