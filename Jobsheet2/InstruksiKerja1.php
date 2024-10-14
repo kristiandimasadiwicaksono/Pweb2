@@ -1,59 +1,38 @@
 <?php
 // Definisi sebuah class
-class Mahasiswa {
+class Pengguna {
     // Atribut
     private $nama;
-    private $nim;
-    private $jurusan;
-
+    
     // Constructor
-    public function __construct($nama, $nim, $jurusan)
-    {
+    public function __construct($nama){
         $this->nama = $nama;
-        $this->nim = $nim;
-        $this->jurusan = $jurusan;
     }
 
-    // Method untuk menampilkan data keseluruhan mahasiswa
-    public function tampilkanData(){
-        echo "Nama : $this->nama <br> NIM : $this->nim <br> Jurusan : $this->jurusan <br>";
-    }
-    // Method untuk meletakkan value nama 
-    public function setNama($nama){
-        $this->nama = $nama;
-    }
-    // Method untuk meletakkan value NIM
-    public function setNim($nim){
-        $this->nim = $nim;
-    }
-    // Method untuk meletakkan value Jurusan
-    public function setJurusan($jurusan){
-        $this->jurusan = $jurusan;
-    }
-    // Method untuk menampilkan data Nama mahasiswa
+    // Method untuk menampilkan nama pengguna
     public function getNama(){
         echo "Nama : $this->nama<br>";
     }
-    // Method untuk menampilkan data NIM mahasiswa
-    public function getNim(){
-        echo "NIM : $this->nim<br>";
+}
+
+// Definisi sebuah class yang merupakan warisan dari pengguna
+class Dosen extends Pengguna{
+    private $mataKuliah;
+
+    // Constructor
+    public function __construct($nama, $mataKuliah){
+        parent::__construct($nama);
+        $this->mataKuliah = $mataKuliah;
     }
-    // Method untuk menampilkan data Jurusan mahasiswa
-    public function getJurusan(){
-        echo "Jurusan : $this->jurusan<br>";
+
+    // method untuk menampilkan mata kuliah
+    public function getMataKuliah(){
+        echo "Matkul : $this->mataKuliah<br>";
     }
 }
 
-// Proses instansiasi object
-$Mhs = new Mahasiswa (nama : "Asep", nim : "230303030", jurusan : "Mesin");
-$Mhs->tampilkanData();
-// Memberikan value Udin untuk atribut nama
-$Mhs->setNama("Udin");
-$Mhs->getNama();
-// Memberikan value 233333333 untuk atribut NIM
-$Mhs->setNim("233333333");
-$Mhs->getNim();
- // Memberikan value Komputer dan Bisnis untuk atribut Jurusan
-$Mhs->setJurusan("Komputer dan Bisnis");
-$Mhs->getJurusan();
+// Memberikan value untuk nama dan matakuliah
+$Dsn = new Dosen("Adudu", "Matdis");
+// Menampilkan data pada class dosen
+$Dsn->getMataKuliah();
 ?>

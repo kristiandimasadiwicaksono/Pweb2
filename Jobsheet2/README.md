@@ -3,10 +3,11 @@
 ### <p align="center">JOBSHEET 2</p>
 
 #### 1. Membuat Class dan Object
-Langkah pertama yaitu menentukan class dan objectnya, pada hal ini sudah ditetapkan bahwa akan membuat sebuah Class yang bernama Mahasiswa dengan atributnya yaitu nama, nim, dan jurusan.
+<p align = "justify">Langkah pertama yaitu menentukan class dan objectnya, pada hal ini sudah ditetapkan bahwa akan membuat sebuah Class yang bernama Mahasiswa dengan atributnya yaitu nama, nim, dan jurusan.
 
 
-Setelah itu membuat sebuah method untuk menampilkan sebuah data yang sudah diinstansiasikan.
+Setelah itu membuat sebuah method untuk menampilkan sebuah data yang sudah diinstansiasikan.</p>
+
 ```php
 <?php
 // Definisi sebuah class
@@ -40,6 +41,7 @@ Hasil :
 <img src = '/image/Jobsheet21.png'>
 
 #### 2. Encapsulation
+<p align = "justify">Langkah ke-2 yaitu encapsulation dimana menyatukan atribut dan method yang biasa disebut dengan object. Encapsulation digunakan untuk membatasi akses terhadap atribut dan method, sehingga data yang diubah hanya data yang dipanggil melalui sebuah method tersebut. pada langkah ke-2 ini diterapkan dengan menggunakan method setter dan getter, contohnya setNama dan getNama dimana set untuk memberikan nilai kepada sebuah atribut dan get untuk mendapatkan data tersebut.</p>
 
 ```php
 <?php
@@ -106,3 +108,49 @@ $Mhs->getJurusan();
 Hasil : 
 
 <img src = '/image/Jobsheet22.png'>
+
+#### 3. Inheritance
+
+<p align = "Justify">Inheritance yaitu pewarisan yang dimana terdapat sebuah class baru yang mewarisi class induk (superclass). Dengan adanya inheritance ini, kode program yang sama tidak perlu ditulis kembali ke dalam class lainnya seperti pada program dibawah ini, terdapat superclass pengguna dengan atribut nama dan terdapat subclass dosen dengan atribut mataKuliah. Selanjutnya melakukan proses instansiasi object dengan value untuk nama = "Adudu" dan value untuk MataKuliah = "Matdis".</p>
+
+```php
+<?php
+// Definisi sebuah class
+class Pengguna {
+    // Atribut
+    private $nama;
+    
+    // Constructor
+    public function __construct($nama){
+        $this->nama = $nama;
+    }
+
+    // Method untuk menampilkan nama pengguna
+    public function getNama(){
+        echo "Nama : $this->nama<br>";
+    }
+}
+
+// Definisi sebuah class yang merupakan warisan dari pengguna
+class Dosen extends Pengguna{
+    private $mataKuliah;
+
+    // Constructor
+    public function __construct($nama, $mataKuliah){
+        parent::__construct($nama);
+        $this->mataKuliah = $mataKuliah;
+    }
+
+    // method untuk menampilkan mata kuliah
+    public function getMataKuliah(){
+        echo "Matkul : $this->mataKuliah<br>";
+    }
+}
+
+// Memberikan value untuk nama dan matakuliah
+$Dsn = new Dosen("Adudu", "Matdis");
+// Menampilkan data pada class dosen
+$Dsn->getMataKuliah();
+?>
+```
+
