@@ -17,12 +17,12 @@ class Mahasiswa {
         echo "Saya $this->nama dengan NPM $this->nim dari jurusan $this->jurusan.<br>";
     }
     
-    //  Fungsi updateJurusan
+    //  Method updateJurusan
     public function updateJurusan($newJurusan){
         $this->jurusan = $newJurusan;
     }
 
-    //  Fungsi setNim 
+    //  Method setNim 
     public function setNim($newNim){ 
         $this->nim = $newNim;
     }
