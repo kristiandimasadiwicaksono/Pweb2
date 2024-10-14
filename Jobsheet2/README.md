@@ -37,4 +37,4 @@ $Mhs->tampilkanData();
 ```
 Hasil :
 
-<img src = "image/JS21.jpg">
+<img src = 'image/Jobsheet21.png'>
