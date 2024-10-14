@@ -37,7 +37,7 @@ $Mhs->tampilkanData();
 ```
 Hasil :
 
-<img src = 'image/Jobsheet21.png'>
+<img src = '/image/Jobsheet21.png'>
 
 #### 2. Encapsulation
 

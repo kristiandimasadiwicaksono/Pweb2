@@ -118,4 +118,4 @@ $Dsn->tampilkanDosen();
 ### Hasil
 Sehingga adapun hasil yang di dapat dalam Jobsheet 1 adalah sebagai berikut :
 
-<img src= "image/Hasil.jpg">
+<img src= "/image/Hasil.jpg">
