@@ -786,6 +786,20 @@ Hasil :
 
 #### <p align="center"> Tugas </p>
 
+#### Penjelasan Program
+    
+<b>Abstract</b> :
+Program diatas merupakan implementasi menggunaakan OOP, dimana terdapat 2 kelas abstract yang bernama Person2 dan jurnal, kedua class tersebut mendefinisikan sebuah method yang kemudian diimplementasikan oleh kelas turunannya masing masing dimana Kelas turunan yang ada pada class Person2 yaitu Mahasiswa dan Dosen, Kelas turunan yang ada pada class Jurnal yaitu JurnalMahasiswa dan JurnalDosen.
+    
+<b>Encapsulation</b> : 
+Adapun beberapa attribute yang terdapat pada abstract class Person2 seperti name yang bersifat protected, dan pada class turunannya yaitu class Mahasiswa terdapat 2 attribute yang berisi nim dan jurusan yang bersifat private, dan pada class turunan yang lainnya yaitu class mahasiswa berisi 2 attribute diantaranya adalah nim dan jurusan.
+    
+<b>Inheritance</b> :
+Kedua abstract class tersebut mewariskan sifatnya yang menggunakan kembali sebuah kode pada class anaknya. seperti pada class Mahasiswa dan Dosen yang mewariskan class Person2. Selain itu ada juga class JurnalMahasiswa dan JurnalDosen yang mewariskan class Jurnal.
+    
+<b>Polymorphism</b> :
+Method getRole() memang memiliki nama yang sama tetapi jika sudah diimplementasikan kepada class yang berbeda, isi dari getRole() sendiri memiliki hasil yang berbeda. contohnya pada class Mahasiswa dan Dosen. Selain getRole() ada juga method jurnal() yang terletak pada class JurnalMahasiswa dan JurnalDosen, keduanya ini memiliki isi yang berbeda sesuai dengan classnya masing masing.
+
 Program :
 
 ```php
@@ -930,19 +944,6 @@ $JurnalDsn->jurnal();
 ?>
 ```
 
-#### Penjelasan Program
-
-<b>Abstract</b> :
-Program diatas merupakan implementasi menggunaakan OOP, dimana terdapat 2 kelas abstract yang bernama Person2 dan jurnal, kedua class tersebut mendefinisikan sebuah method yang kemudian diimplementasikan oleh kelas turunannya masing masing dimana Kelas turunan yang ada pada class Person2 yaitu Mahasiswa dan Dosen, Kelas turunan yang ada pada class Jurnal yaitu JurnalMahasiswa dan JurnalDosen.
-
-<b>Encapsulation</b> : 
-Adapun beberapa attribute yang terdapat pada abstract class Person2 seperti name yang bersifat protected, dan pada class turunannya yaitu class Mahasiswa terdapat 2 attribute yang berisi nim dan jurusan yang bersifat private, dan pada class turunan yang lainnya yaitu class mahasiswa berisi 2 attribute diantaranya adalah nim dan jurusan.
-
-<b>Inheritance</b> :
-Kedua abstract class tersebut mewariskan sifatnya yang menggunakan kembali sebuah kode pada class anaknya. seperti pada class Mahasiswa dan Dosen yang mewariskan class Person2. Selain itu ada juga class JurnalMahasiswa dan JurnalDosen yang mewariskan class Jurnal.
-
-<b>Polymorphism</b> :
-Method getRole() memang memiliki nama yang sama tetapi jika sudah diimplementasikan kepada class yang berbeda, isi dari getRole() sendiri memiliki hasil yang berbeda. contohnya pada class Mahasiswa dan Dosen. Selain getRole() ada juga method jurnal() yang terletak pada class JurnalMahasiswa dan JurnalDosen, keduanya ini memiliki isi yang berbeda sesuai dengan classnya masing masing
 
 #### Hasil
 
