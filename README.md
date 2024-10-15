@@ -507,3 +507,434 @@ Hasil :
 
 
 <img src = "image/Jobsheet25.png">
+
+### <p align="center"> JOBSHEET 3 </p>
+
+#### <p align="center"> Instruksi Kerja </p>
+
+#### 1. Inheritance
+
+kode dibawah ini menggunakan inheritance agar class student mewariskan atribut dan method yang ada di kelas abstract person. Pada class student juga menambahkan attribut khusus yaitu studentID, class student dapat menggunakan dan memperluas fungsi yang ada pada class person seperti setName()
+```php
+<?php
+// Kelas abstract Person
+abstract class Person{
+    // Attribute protected
+    protected $name;
+
+    // Constructor
+    public function __construct($name){
+        $this->name = $name;
+    }
+
+    // Method setter untuk atribute name
+    public function setName($name){
+        $this->name = $name;    
+    }
+
+    // Method abstract getter 
+    abstract public function getName();
+}
+
+// Kelas students extends person
+class Student extends Person{
+    private $studentID;
+
+    // constructor untuk menginisialisasi nama dan student id
+    public function __construct($name, $studentID){
+        parent::__construct($name);
+        $this->studentID = $studentID;
+    }
+
+    // setter untuk mengubah nilai student
+    public function setStudentID($studentID){
+        $this->studentID = $studentID;
+    }
+
+    // getter untuk mendapatkan student id
+    public function getStudentID(){
+        echo "ID : $this->studentID";
+    }
+
+    // getter untuk mendapatkan nama
+    public function getName(){
+        echo "Nama Pelajar : $this->name<br>";
+    }
+}
+```
+
+#### 2. Polymorphism
+
+Polymorphism pada potongan program dibawah ini terdapat pada method getName() yang diimplementasikan pada kelas student dan teacher.Pada class student berisi Nama Pelajar, dan pada class teacher berisi Nama Murid. getName yang berbeda penempatan berfungsi untuk memanggil metode yang sama dengan hasil sesuai dengan penempatannya.
+
+```php
+class Student extends Person{
+    private $studentID;
+
+    // constructor untuk menginisialisasi nama dan student id
+    public function __construct($name, $studentID){
+        parent::__construct($name);
+        $this->studentID = $studentID;
+    }
+
+    // setter untuk mengubah nilai student
+    public function setStudentID($studentID){
+        $this->studentID = $studentID;
+    }
+
+    // getter untuk mendapatkan student id
+    public function getStudentID(){
+        echo "ID : $this->studentID";
+    }
+
+    // getter untuk mendapatkan nama
+    public function getName(){
+        echo "Nama Pelajar : $this->name<br>";
+    }
+}
+
+// Kelas teacher extends person
+class Teacher extends Person{
+    public $TeacherID;
+
+    // Constructor untuk menginisialisasi nama dan teacher id
+    public function __construct($name, $TeacherID){
+        parent::__construct($name);
+        $this->TeacherID = $TeacherID;
+    }
+
+    // getter untuk mendapatkan nama
+    public function getName(){
+        echo "Nama Murid : $this->name<br>";
+    }
+}
+```
+
+#### 3. Encapsulation
+
+Encapsulation pada program dibawah ini terletak pada penggunaan akses private untuk studentID yang dimana attribute ini hanya dapat diakses melalui setStudentID dan getStudentID.
+
+```php
+class Student extends Person{
+    private $studentID;
+
+    // constructor untuk menginisialisasi nama dan student id
+    public function __construct($name, $studentID){
+        parent::__construct($name);
+        $this->studentID = $studentID;
+    }
+
+    // setter untuk mengubah nilai student
+    public function setStudentID($studentID){
+        $this->studentID = $studentID;
+    }
+
+    // getter untuk mendapatkan student id
+    public function getStudentID(){
+        echo "ID : $this->studentID";
+    }
+
+    // getter untuk mendapatkan nama
+    public function getName(){
+        echo "Nama Pelajar : $this->name<br>";
+    }
+}
+```
+
+#### 4. Abstraction
+Abstraction pada program berikut terlihat pada class course diman getCourseDetails(). Untuk dapat menggunakan getCourseDetails(), ini dapat dilakukan dengan menggunakan subclass dari superclass tersebut.
+```php
+// Kelas abstract course
+abstract class Course{
+
+    // abstract method untuk course details
+    abstract public function getCourseDetails();
+}
+
+// Kelas extends(turunan) Course
+class OnlineCourse extends Course{
+
+    // Method mencetak detail course
+    public function getCourseDetails(){
+        echo "Online Course<br>";
+    }
+}
+
+class OfflineCourse extends Course{
+    // Method mencetak detail course
+    public function getCourseDetails(){
+        echo "Offline Course<br>";
+    }
+}
+```
+
+Program keseluruhan : 
+
+```php
+<?php
+// Kelas abstract Person
+abstract class Person{
+    // Attribute protected
+    protected $name;
+
+    // Constructor
+    public function __construct($name){
+        $this->name = $name;
+    }
+
+    // Method setter untuk atribute name
+    public function setName($name){
+        $this->name = $name;    
+    }
+
+    // Method abstract getter 
+    abstract public function getName();
+}
+
+// Kelas students extends person
+class Student extends Person{
+    private $studentID;
+
+    // constructor untuk menginisialisasi nama dan student id
+    public function __construct($name, $studentID){
+        parent::__construct($name);
+        $this->studentID = $studentID;
+    }
+
+    // setter untuk mengubah nilai student
+    public function setStudentID($studentID){
+        $this->studentID = $studentID;
+    }
+
+    // getter untuk mendapatkan student id
+    public function getStudentID(){
+        echo "ID : $this->studentID";
+    }
+
+    // getter untuk mendapatkan nama
+    public function getName(){
+        echo "Nama Pelajar : $this->name<br>";
+    }
+}
+
+// Kelas teacher extends person
+class Teacher extends Person{
+    public $TeacherID;
+
+    // Constructor untuk menginisialisasi nama dan teacher id
+    public function __construct($name, $TeacherID){
+        parent::__construct($name);
+        $this->TeacherID = $TeacherID;
+    }
+
+    // getter untuk mendapatkan nama
+    public function getName(){
+        echo "Nama Murid : $this->name<br>";
+    }
+}
+
+// Kelas abstract course
+abstract class Course{
+
+    // abstract method untuk course details
+    abstract public function getCourseDetails();
+}
+
+// Kelas extends(turunan) Course
+class OnlineCourse extends Course{
+
+    // Method mencetak detail course
+    public function getCourseDetails(){
+        echo "Online Course<br>";
+    }
+}
+
+class OfflineCourse extends Course{
+    // Method mencetak detail course
+    public function getCourseDetails(){
+        echo "Offline Course<br>";
+    }
+}
+
+// Instansiasi objek
+$murid = new Student("Dimas", "12");
+$guru = new Teacher("Josh", "16");
+
+// Memanggil method getname dari class student
+$murid->getName();
+// Memanggil method getname dari class teacher
+$guru->getName();
+// Mengubah nama murid di class student
+$murid->setName("Nale");
+// Memanggil method getname untuk menampilkan nama baru
+$murid->getName();
+
+// instansiasi objek
+$Online = new OnlineCourse();
+// Memanggil method untuk menampilkan detail course
+$Online->getCourseDetails();
+// instansiasi objek
+$Offline = new OfflineCourse();
+// Memanggil method untuk menampilkan detail course
+$Offline->getCourseDetails();
+?>
+```
+
+Hasil :
+
+<img src = "image/Jobsheet26.png">
+
+#### <p align="center"> Tugas </p>
+
+Program :
+
+```php
+<?php
+// Kelas abstract Person
+abstract Class Person2{
+    // Attribute protected
+    protected $name;
+
+    // Constructor inisialisasi attribute
+    public function __construct($name){
+        $this->name = $name;
+    }
+
+    // setter mengubah nilai name
+    public function setName($name){
+        $this->name = $name;
+    }
+
+    // getter untuk mendapatkan
+    public function getName(){
+        echo "Nama : $this->name<br>";
+    }
+
+    // getter untuk Role
+    abstract public function getRole();
+}
+
+// class extends dari class person2
+class Mahasiswa extends Person2{
+    // Attribute private
+    private $nim;
+    private $jurusan;
+
+    // Constructor inisialisasi attribute
+    public function __construct ($name, $nim, $jurusan){
+        parent::__construct($name);
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+    // setter untuk mengubah nilai Nim
+    public function setNim($nim){
+        $this->nim = $nim;
+    }
+
+    // setter untuk mengubah nilai Jurusan
+    public function setJurusan($jurusan){
+        $this->jurusan = $jurusan;
+    }
+
+    // getter untuk mendapatkan nilai name, nim, dan jurusan
+    public function getData(){
+        parent::getName();
+        echo "NIM : $this->nim <br> Jurusan : $this->jurusan <br>";
+    }
+    
+    // getter untuk mendapatkan role
+    public function getRole(){
+        echo "Mahasiswa<br>";
+    }
+}
+
+// class extends dari person2
+class Dosen extends Person2{
+    // Attribute Private
+    private $Nidn;
+    private $Matakuliah;
+
+    // constructor untuk menginisialisasi attribute
+    public function __construct($name, $Nidn, $Matakuliah){
+        parent::__construct($name);
+        $this->Nidn = $Nidn;
+        $this->Matakuliah = $Matakuliah;
+    }
+
+    // setter untuk mengubah nilai Nidn
+    public function setNidn($nidn){
+        $this->Nidn = $nidn;
+    }
+
+    // setter untuk mengubah nilai matakuliah
+    public function setMatakuliah($Matakuliah){
+        $this->Matakuliah = $Matakuliah;
+    }
+
+    // getter untuk mendapatkan nilai name, nidn, dan matakuliah
+    public function getData(){
+        parent::getName();
+        echo "NIDN : $this->Nidn <br> Matakuliah : $this->Matakuliah<br>";
+    }
+
+    // getter untuk mendapatkan role
+    public function getrole(){
+        echo "Dosen<br>";
+    }
+}
+
+// Kelas abstract jurnal
+abstract class jurnal{
+    // method untuk jurnal
+    abstract public function jurnal();
+}
+
+// class extends dari class jurnal
+class JurnalMahasiswa extends jurnal{
+    // method jurnal
+    public function jurnal(){
+    echo "Kelola pengajuan jurnal Mahasiswa<br><br>";
+    }
+}
+
+// class extends dari class jurnal
+class JurnalDosen extends jurnal{
+
+    // method jurnal
+    public function jurnal(){
+    echo "Kelola pengajuan jurnal Dosen";
+    }
+}
+
+// Instansiasi objek
+$Mahasiswa = new Mahasiswa("Kristian Dimas","230302065","Komputer dan Bisnis");
+// Memanggil method getRole
+$Mahasiswa->getRole();
+// Memanggil method getData
+$Mahasiswa->getData();
+// Instanisasi jurnal
+$JurnalMhs = new JurnalMahasiswa();
+// Memanggil method jurnal
+$JurnalMhs->jurnal();
+// Instanisasi objek
+$Dosen = new Dosen("Ucup","233333333","Mesin");
+// Memanggil method getrole
+$Dosen->getRole();
+// Memanggil method getData
+$Dosen->getData();
+// Instansiasi objek
+$JurnalDsn = new JurnalDosen();
+// Memanggil method jurnal
+$JurnalDsn->jurnal();
+?>
+```
+
+#### Penjelasan Program
+Program diatas merupakan implementasi menggunaakan OOP, dimana terdapat 2 kelas abstract yang bernama Person2 dan jurnal, kedua class tersebut mendefinisikan sebuah method yang kemudian diimplementasikan oleh kelas turunannya masing masing dimana Kelas turunan yang ada pada class Person2 yaitu Mahasiswa dan Dosen, Kelas turunan yang ada pada class Jurnal yaitu JurnalMahasiswa dan JurnalDosen.
+
+Adapun beberapa attribute yang terdapat pada abstract class Person2 seperti name yang bersifat protected, dan pada class turunannya yaitu class Mahasiswa terdapat 2 attribute yang berisi nim dan jurusan yang bersifat private, dan pada class turunan yang lainnya yaitu class mahasiswa berisi 2 attribute diantaranya adalah nim dan jurusan.
+
+Kedua abstract class tersebut mewariskan sifatnya yang menggunakan kembali sebuah kode pada class anaknya. seperti pada class Mahasiswa dan Dosen yang mewariskan class Person2. Selain itu ada juga class JurnalMahasiswa dan JurnalDosen yang mewariskan class Jurnal.
+
+Method getRole() memang memiliki nama yang sama tetapi jika sudah diimplementasikan kepada class yang berbeda, isi dari getRole() sendiri memiliki hasil yang berbeda. contohnya pada class Mahasiswa dan Dosen. Selain getRole() ada juga method jurnal() yang terletak pada class JurnalMahasiswa dan JurnalDosen, keduanya ini memiliki isi yang berbeda sesuai dengan classnya masing masing
