@@ -1,7 +1,16 @@
 # PWEB2
 ### OOP (Object Oriented Programming)
-*__OOP__* sendiri berisi sebuah data dan fungsi dibungkus ke dalam objek yang dibuat berdasarkan class.
+*__OOP__* sendiri berisi sebuah data dan fungsi yang dibungkus ke dalam objek yang dibuat berdasarkan class. 
 
+
+<p>Konsep dasar dalam OOP terdiri dari 3 konsep, yaitu :<br>
+1. Encapsulation<br>
+2. Polymorphism<br>
+3. Inheritance</p>
+
+<p align="justify"><b>Encapsulation</b> merupakan pembungkusan data dan method yang ada pada sebuah class.
+<p align="justify"><b>Polymorphism</b> merupakan fungsi yang memiliki banyak bentuk yang dimana sebuah fungsi atau method yang sama dapat digunakan di berbagai objek.
+<p align="justify"><b>Inheritance</b> merupakan penurunan dari class parent atau biasa disebut dengan superclass. Dengan adanya `Inheritance` ini dapat memudahkan ketika membuat sebuah class baru tanpa menuliskan kembali fitur yang dimiliki superclass tersebut.
 <hr></hr>
 
 ### <p align= center>JOBSHEET 1</p>
