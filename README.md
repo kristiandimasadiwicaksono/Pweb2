@@ -938,3 +938,7 @@ Adapun beberapa attribute yang terdapat pada abstract class Person2 seperti name
 Kedua abstract class tersebut mewariskan sifatnya yang menggunakan kembali sebuah kode pada class anaknya. seperti pada class Mahasiswa dan Dosen yang mewariskan class Person2. Selain itu ada juga class JurnalMahasiswa dan JurnalDosen yang mewariskan class Jurnal.
 
 Method getRole() memang memiliki nama yang sama tetapi jika sudah diimplementasikan kepada class yang berbeda, isi dari getRole() sendiri memiliki hasil yang berbeda. contohnya pada class Mahasiswa dan Dosen. Selain getRole() ada juga method jurnal() yang terletak pada class JurnalMahasiswa dan JurnalDosen, keduanya ini memiliki isi yang berbeda sesuai dengan classnya masing masing
+
+#### Hasil
+
+<img src = "image/Jobsheet27.png">
